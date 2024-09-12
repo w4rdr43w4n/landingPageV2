@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Lato', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">
+                <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="title" class="h-8">
+            </a>
+            <div class="flex space-x-4">
+                <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="#products" class="text-gray-600 hover:text-gray-900">Products</a>
+                <a href="#video" class="text-gray-600 hover:text-gray-900">Video</a>
+                <a href="#reviews" class="text-gray-600 hover:text-gray-900">Reviews</a>
+                <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-screen">
+            <div class="carousel relative h-full overflow-hidden">
+                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://live-production.wcms.abc-cdn.net.au/993fcd282fdce29e6f2f6f633966fb1c?impolicy=wcms_crop_resize&cropH=1688&cropW=3000&xPos=0&yPos=94&width=862&height=485" alt="Carousel Image 1" class="w-full h-full object-cover">
+                </div>
+                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+                    <img src="https://live-production.wcms.abc-cdn.net.au/993fcd282fdce29e6f2f6f633966fb1c?impolicy=wcms_crop_resize&cropH=1688&cropW=3000&xPos=0&yPos=94&width=862&height=485" alt="Carousel Image 2" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center text-white text-center">
+                    <div>
+                        <h1 class="text-4xl font-bold mb-4">carousel text</h1>
+                        <p class="text-xl mb-8">secondary carousel text</p>
+                        <a href="#" class="bg-white text-gray-900 px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300">Get Started</a>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-300">
+                    <div class="progress-bar h-full bg-white transition-all duration-1000 ease-linear" style="width: 0%"></div>
+                </div>
+                <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-gray-900 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-gray-900 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">my paragraph</h2>
+                <p class="text-gray-600 mb-6 text-center">my text</p>
+                <p class="text-gray-600 mb-6 text-center">my text</p>
+            </div>
+        </section>
+
+        <section id="products" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Our Products</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="samsung" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">samsung</h3>
+                            <p class="text-gray-600 mb-4">company</p>
+                            <p class="text-lg font-bold">$9999999999</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="samsung" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">samsung</h3>
+                            <p class="text-gray-600 mb-4">company</p>
+                            <p class="text-lg font-bold">$9999999999</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Explainer Video</h2>
+                <div class="flex justify-center">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/Y5dimbG5d5M" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Customer Reviews</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Great product! Highly recommended."</p>
+                        <p class="font-bold">John Doe</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Very satisfied with my purchase."</p>
+                        <p class="font-bold">Jane Smith</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">"Excellent customer service!"</p>
+                        <p class="font-bold">Mike Johnson</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="border-b border-gray-200 pb-4">
+                        <button class="flex items-center justify-between w-full">
+                            <span class="text-lg font-medium text-gray-900">whats your name?</span>
+                            <span class="ml-6 h-7 flex items-center">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="mt-4">
+                            <p class="text-gray-500">I'm hhhhh</p>
+                        </div>
+                    </div>
+                    <div class="border-b border-gray-200 pb-4">
+                        <button class="flex items-center justify-between w-full">
+                            <span class="text-lg font-medium text-gray-900">whats not your name?</span>
+                            <span class="ml-6 h-7 flex items-center">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="mt-4">
+                            <p class="text-gray-500">wahahahaha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Feedback</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-8 text-center">Order Form</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="product" class="block text-gray-700 font-bold mb-2">Product</label>
+                        <select id="product" name="product" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <option value="">Select a product</option>
+                            <option value="samsung">samsung</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="quantity" class="block text-gray-700 font-bold mb-2">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="address" class="block text-gray-700 font-bold mb-2">Address</label>
+                        <textarea id="address" name="address" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Place Order</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">G6 Company</h3>
+                    <p>Hours: 5</p>
+                    <p>Email: wardrawan535@gmail.com</p>
+                    <p>Phone: +4915214787627</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">Location</h3>
+                    <p>G6 Company</p>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-2">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const slides = carousel.querySelectorAll('.slide');
+        const progressBar = carousel.querySelector('.progress-bar');
+        const prevBtn = carousel.querySelector('.fa-chevron-left').parentElement;
+        const nextBtn = carousel.querySelector('.fa-chevron-right').parentElement;
+        let currentSlide = 0;
+        const slideDuration = 5000; // 5 seconds
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            currentSlide = index;
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slides.length);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+        }
+
+        function updateProgressBar() {
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 50);
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        showSlide(0);
+        setInterval(nextSlide, slideDuration);
+
+        // FAQ functionality
+        const faqButtons = document.querySelectorAll('#faq button');
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>

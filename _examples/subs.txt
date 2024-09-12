@@ -1,0 +1,14 @@
+Used APIs:
+  1. Gemini: 
+      - model: gemini-flash-1.5
+      - State: It's the most suitable and reliable model for our needs.
+      - Capapility           Value                   State
+          INPUT Tokens Per minute   1M+                    Enough (Can be leveraged to 4M with subscription)
+          OUTPUT Tokens             8192                   Currently Enough
+          Requests Per Minute(RPM)  15                     Needs a subscription (Leveraged to 1000 RPM)
+          Images per request        Up to 3600             Enough
+      - Enable Billing: 
+          - Use This Link: https://console.cloud.google.com/freetrial/signup/tos?redirectPath=%2Fbilling%2Flinkedaccount%3Fproject%3Dgen-lang-client-0270727425&projectToLink=547212780482&project=gen-lang-client-0270727425&login=true
+          to Create A Billing Account, then enable the pay-as-you-go rate limits.
+  2. Anthropic Claude AI:
+      - Claude AI model is needed and the current subscription is Enough for now.

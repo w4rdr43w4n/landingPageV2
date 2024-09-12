@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Minds Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF5722',
+                        secondary: '#FFF3E0',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-poppins bg-secondary text-gray-800">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuLUv-na091awzrfq2f50DwLwOaMOMoIvJhA&s" alt="Creative Minds Academy" class="h-12 mr-3">
+                <span class="text-2xl font-bold text-primary">Creative Minds Academy</span>
+            </a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#home" class="hover:text-primary">Home</a></li>
+                    <li><a href="#courses" class="hover:text-primary">Courses</a></li>
+                    <li><a href="#enroll" class="hover:text-primary">Enroll</a></li>
+                    <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-screen">
+            <div class="carousel relative h-full overflow-hidden">
+                <div class="slide-container h-full flex transition-transform duration-500 ease-in-out">
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkpm4fFOfx9Rv7XwaM2v0bisXh2FBK9PO8pQ&s');"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://img.freepik.com/free-vector/gradient-international-day-education-background_23-2151120687.jpg');"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/002/335/722/small/school-supply-stationary-background-free-vector.jpg');"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzL8ZRnPBqgOvKj7mHiFOet-UuD8ZNvkV1eLYBFs2YNymTR-odqkJ8S7hM-j-XMsE7Lxg&usqp=CAU');"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-300">
+                    <div class="progress-bar h-full bg-primary transition-all duration-100 ease-linear" style="width: 0%;"></div>
+                </div>
+                <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hover:bg-opacity-75" id="prevBtn">
+                    <i class="fas fa-chevron-left text-primary"></i>
+                </button>
+                <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hover:bg-opacity-75" id="nextBtn">
+                    <i class="fas fa-chevron-right text-primary"></i>
+                </button>
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+                <h1 class="text-4xl font-bold mb-4">Unlock Your Creative Potential</h1>
+                <p class="text-xl mb-8">Discover, Learn, and Grow with Expert Guidance</p>
+                <a href="#enroll" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300">Get Started</a>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Welcome to Creative Minds Academy</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto">
+                    Welcome to Creative Minds Academy, where imagination knows no bounds. Our academy is a vibrant hub for aspiring artists, musicians, dancers, and performers of all ages. With state-of-the-art facilities and passionate instructors, we provide a nurturing environment for you to explore your talents, refine your skills, and express yourself through various art forms. Whether you're a beginner or looking to advance your abilities, our diverse range of courses and workshops will inspire and challenge you to reach new creative heights.
+                </p>
+            </div>
+        </section>
+
+        <section id="paragraph" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">{t*}</h2>
+                <p class="text-lg text-center max-w-3xl mx-auto">{p*}</p>
+            </div>
+        </section>
+
+        <section id="courses" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Our Courses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-secondary rounded-lg overflow-hidden shadow-md">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFeKeWPmPZTUS9C22xmxvMh970gSbDhU1O9A&s" alt="Introduction to Painting" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Introduction to Painting</h3>
+                            <p class="text-gray-600 mb-4">Explore various painting techniques and styles in this beginner-friendly course.</p>
+                            <p class="text-primary font-bold">$199 for 8 weeks</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden shadow-md">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSBrY5Cykdx6i67cTh_wlr_AraUjp_5tSXOA&s" alt="Advanced Guitar Lessons" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Advanced Guitar Lessons</h3>
+                            <p class="text-gray-600 mb-4">Take your guitar skills to the next level with personalized instruction.</p>
+                            <p class="text-primary font-bold">$75 per hour</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden shadow-md">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2z-uy5tf-m-ML3RqWbW99SAz9Tz_AfoegAA&s" alt="Contemporary Dance Workshop" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Contemporary Dance Workshop</h3>
+                            <p class="text-gray-600 mb-4">Express yourself through movement in our dynamic contemporary dance classes.</p>
+                            <p class="text-primary font-bold">$150 for 6 weeks</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden shadow-md">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwYeobY7m714uSVjKwkb_jDJ7tX6ZrSgg2jw&s" alt="Youth Theater Program" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Youth Theater Program</h3>
+                            <p class="text-gray-600 mb-4">Develop acting skills and confidence in our fun and engaging theater program for kids.</p>
+                            <p class="text-primary font-bold">$250 for 10 weeks</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden shadow-md">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWYNv3Nwr_NmdGJWVl0Ny0_zYGpiiS2iNJ5g&s" alt="Digital Art and Design" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Digital Art and Design</h3>
+                            <p class="text-gray-600 mb-4">Learn to create stunning digital artwork using industry-standard software.</p>
+                            <p class="text-primary font-bold">$225 for 8 weeks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Discover Creative Minds Academy</h2>
+                <div class="flex justify-center">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/RyH6DOTZNdI" frameborder="0" allowfullscreen class="shadow-lg rounded-lg"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">What Our Students Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-secondary rounded-lg p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"The painting course at Creative Minds Academy was a game-changer for me. The instructors are incredibly talented and supportive."</p>
+                        <p class="font-semibold">- Sarah Johnson</p>
+                    </div>
+                    <div class="bg-secondary rounded-lg p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600">4.5</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"I've always wanted to learn guitar, and the advanced lessons here have helped me improve tremendously. Highly recommended!"</p>
+                        <p class="font-semibold">- Michael Lee</p>
+                    </div>
+                    <div class="bg-secondary rounded-lg p-6 shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"The dance workshops are amazing! I've gained so much confidence and made great friends. Can't wait for the next session!"</p>
+                        <p class="font-semibold">- Emily Chen</p>
+                    </div>
+                </div>
+                <p class="text-center mt-8 text-gray-600">Based on 73 reviews</p>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">What age groups do you cater to?</h3>
+                        <p class="text-gray-700">We offer classes for all age groups, from children as young as 5 to adults of any age. Our courses are designed to accommodate different skill levels and interests.</p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Do I need to bring my own equipment or supplies?</h3>
+                        <p class="text-gray-700">For most classes, basic supplies are provided. However, for certain courses like music lessons, you may need to bring your own instrument. Specific requirements are listed in the course descriptions.</p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Are there any prerequisites for joining advanced classes?</h3>
+                        <p class="text-gray-700">Advanced classes usually require some prior experience or skills. We offer placement assessments to help determine the best level for you. You can also start with introductory classes and progress from there.</p>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-2">Do you offer trial classes or open days?</h3>
+                        <p class="text-gray-700">Yes, we regularly host open days where you can try out different classes and meet our instructors. We also offer single trial sessions for most of our regular courses at a reduced rate.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Is there a performance or exhibition opportunity for students?</h3>
+                        <p class="text-gray-700">Absolutely! We organize seasonal showcases, recitals, and exhibitions where students can display their work or perform. These events are a great way to celebrate creativity and share accomplishments with family and friends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="enroll" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Enroll Now</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="mb-4">
+                        <label for="course" class="block text-gray-700 font-semibold mb-2">Select Course</label>
+                        <select id="course" name="course" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Choose a course</option>
+                            <option value="painting">Introduction to Painting</option>
+                            <option value="guitar">Advanced Guitar Lessons</option>
+                            <option value="dance">Contemporary Dance Workshop</option>
+                            <option value="theater">Youth Theater Program</option>
+                            <option value="digital-art">Digital Art and Design</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Additional Information</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-opacity-90 transition duration-300">Submit Enrollment</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Creative Minds Academy</h3>
+                    <p>123 Inspiration Avenue</p>
+                    <p>Artsville, NY 10001</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+                    <p>Phone: (212) 555-7890</p>
+                    <p>Email: info@creativemindsacademy.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Hours</h3>
+                    <p>Monday-Friday: 9am-8pm</p>
+                    <p>Saturday: 10am-6pm EST</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-primary"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2023 Creative Minds Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const slideContainer = carousel.querySelector('.slide-container');
+        const slides = carousel.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = carousel.querySelector('.progress-bar');
+
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        const slideWidth = 100; // 100%
+        const slideDuration = 5800; // ms
+
+        function showSlide(index) {
+            slideContainer.style.transform = `translateX(-${index * slideWidth}%)`;
+            currentSlide = index;
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slideCount);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slideCount) % slideCount);
+        }
+
+        function updateProgressBar() {
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 50);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-advance slides
+        setInterval(nextSlide, slideDuration);
+
+        // Initialize first slide
+        showSlide(0);
+    </script>
+</body>
+</html>

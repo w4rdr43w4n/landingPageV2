@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Gear Co.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF5722',
+                        secondary: '#FBE9E7',
+                    },
+                    fontFamily: {
+                        oswald: ['Oswald', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-oswald bg-secondary text-gray-800">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary">
+                <img src="https://example.com/images/adventure-gear-co-logo.png" alt="Adventure Gear Co." class="h-12">
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="hover:text-primary">Home</a></li>
+                <li><a href="#products" class="hover:text-primary">Products</a></li>
+                <li><a href="#video" class="hover:text-primary">Video</a></li>
+                <li><a href="#reviews" class="hover:text-primary">Reviews</a></li>
+                <li><a href="#faq" class="hover:text-primary">FAQ</a></li>
+                <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-screen">
+            <div class="carousel relative h-full overflow-hidden">
+                <div class="slides flex h-full transition-transform duration-500 ease-in-out">
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/hiking-gear.jpg')"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/camping-equipment.jpg')"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/rock-climbing-gear.jpg')"></div>
+                    <div class="slide w-full h-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/kayaking-accessories.jpg')"></div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-between p-4">
+                    <button class="prev-slide text-white text-4xl"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-slide text-white text-4xl"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-300">
+                    <div class="progress-bar h-full bg-primary"></div>
+                </div>
+            </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-50">
+                <h1 class="text-5xl font-bold mb-4">Gear Up for Your Next Adventure</h1>
+                <p class="text-xl mb-8">Quality equipment for outdoor enthusiasts</p>
+                <a href="#products" class="bg-primary text-white px-8 py-3 rounded-full text-lg hover:bg-opacity-90 transition duration-300">Get Started</a>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">{t*}</h2>
+                <p class="text-lg mb-4">{p*}</p>
+            </div>
+        </section>
+
+        <section id="products" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Products</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/300" alt="All-Weather Tent" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">All-Weather Tent</h3>
+                            <p class="text-gray-600 mb-4">Durable 4-season tent for extreme conditions.</p>
+                            <p class="text-primary font-bold text-lg">$299.99</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400" alt="Ultralight Backpack" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Ultralight Backpack</h3>
+                            <p class="text-gray-600 mb-4">50L capacity backpack weighing only 2 lbs.</p>
+                            <p class="text-primary font-bold text-lg">$189.99</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400" alt="Pro Climbing Harness" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Pro Climbing Harness</h3>
+                            <p class="text-gray-600 mb-4">Comfortable and safe harness for all skill levels.</p>
+                            <p class="text-primary font-bold text-lg">$79.99</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/400" alt="Inflatable Kayak" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Inflatable Kayak</h3>
+                            <p class="text-gray-600 mb-4">Portable 2-person kayak for lakes and mild rivers.</p>
+                            <p class="text-primary font-bold text-lg">$349.99</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://via.placeholder.com/200" alt="Solar Power Bank" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Solar Power Bank</h3>
+                            <p class="text-gray-600 mb-4">20000mAh capacity with built-in solar panel.</p>
+                            <p class="text-primary font-bold text-lg">$59.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">See Our Gear in Action</h2>
+                <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto">
+                    <iframe src="https://www.youtube.com/embed/adventure_gear_co_overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Customer Reviews</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Great quality products and excellent customer service. Will definitely shop here again!"</p>
+                        <p class="font-bold">- John D.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600">4.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"The gear I bought held up perfectly during my last hiking trip. Very satisfied with my purchase."</p>
+                        <p class="font-bold">- Sarah M.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600">4.5</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"Fast shipping and the products are exactly as described. Highly recommend!"</p>
+                        <p class="font-bold">- Mike R.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-6 max-w-3xl mx-auto">
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2">Do you offer international shipping?</h3>
+                        <p class="text-gray-700">Yes, we ship to most countries worldwide. Shipping costs and delivery times vary depending on the destination.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2">What is your return policy?</h3>
+                        <p class="text-gray-700">We offer a 30-day return policy for unused items in their original packaging. For defective products, we provide a 1-year warranty.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2">Do you have a physical store?</h3>
+                        <p class="text-gray-700">Currently, we operate exclusively online. However, we're planning to open our first brick-and-mortar store next year.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2">Can I rent equipment instead of buying?</h3>
+                        <p class="text-gray-700">We don't offer rental services at the moment, but we're considering adding this option in the future.</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-2">Do you provide gear recommendations for specific trips?</h3>
+                        <p class="text-gray-700">Absolutely! Our customer service team includes experienced outdoor enthusiasts who can provide personalized gear recommendations based on your trip details and skill level.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-6">
+                        <label for="name" class="block mb-2 font-bold">Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 font-bold">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block mb-2 font-bold">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Order Online</h2>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-6">
+                        <label for="product" class="block mb-2 font-bold">Select Product</label>
+                        <select id="product" name="product" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Choose a product</option>
+                            <option value="tent">All-Weather Tent</option>
+                            <option value="backpack">Ultralight Backpack</option>
+                            <option value="harness">Pro Climbing Harness</option>
+                            <option value="kayak">Inflatable Kayak</option>
+                            <option value="powerbank">Solar Power Bank</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label for="quantity" class="block mb-2 font-bold">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" min="1" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="mb-6">
+                        <label for="shipping-address" class="block mb-2 font-bold">Shipping Address</label>
+                        <textarea id="shipping-address" name="shipping-address" rows="3" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-opacity-90 transition duration-300">Place Order</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Adventure Gear Co.</h3>
+                    <p>123 Trailhead Drive, Boulder, CO 80302</p>
+                    <p>Phone: (303) 555-1234</p>
+                    <p>Email: info@adventuregearco.com</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hours</h3>
+                    <p>Monday-Friday: 9am-7pm MST</p>
+                    <p>Saturday-Sunday: 10am-6pm MST</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl hover:text-primary"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <form>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-lg mb-2 text-gray-800">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-lg w-full hover:bg-opacity-90 transition duration-300">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <p>&copy; 2023 Adventure Gear Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const slides = carousel.querySelector('.slides');
+        const slideCount = slides.children.length;
+        let currentSlide = 0;
+        const progressBar = carousel.querySelector('.progress-bar');
+        const slideDuration = 6000; // 6 seconds
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            currentSlide = index;
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            showSlide((currentSlide + 1) % slideCount);
+        }
+
+        function prevSlide() {
+            showSlide((currentSlide - 1 + slideCount) % slideCount);
+        }
+
+        function updateProgressBar() {
+            progressBar.style.width = '0%';
+            progressBar.style.transition = 'none';
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+                progressBar.style.transition = `width ${slideDuration}ms linear`;
+            }, 10);
+        }
+
+        carousel.querySelector('.next-slide').addEventListener('click', nextSlide);
+        carousel.querySelector('.prev-slide').addEventListener('click', prevSlide);
+
+        setInterval(nextSlide, slideDuration);
+
+        updateProgressBar();
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+Required Paramaeters:
+  - Website type :
+     - Types: 
+        1. Business:
+              Ex: Store, Company..
+        2. Ecommerce 
+              EX: Ecommerce service provider (Amazon,Alibaba...etc)
+        3. Portfolio:
+              EX: Personal Page (CV Page...etc)
+        4. Blog:
+              EX: Medium,stackoverflow....etc
+        5. Marketing
+        6. Learning:
+              EX: Academic, School, University
+        7. Small Business:
+              EX: Grocery store
+        8. Real Estate
+        9. Startup:
+              Ex: Landing Page
+        10. Entertainment
+        11. Sport
+        12. Travel
+        13. Medical
+        etc...
+  - Type specifications: (What's the type of your store Business website? (Food?, Electronics?, Cars?....etc)) (Required)
+  - Site Name (Required)
+  - An Introductory Text (Optional)
+  - Theme:
+      - Styles Provider (CSS, Tailwindcss....etc) (Required)
+      - Main Color (Optional)
+      - Main Font (Optional)
+      - Animations&Effects (Optional)
+      - Destination Devices (Phones?,Tablets?,PC?,Street Signs?) 
+  - Content:
+      - Images and videos (Uploaded as files,saved as links) (1 at least)
+      - Layout (Mostly Defined by The Template, but the use still have the choice to edit it) (Optional)
+      - Main Content (What data and content should the website Contain?) (Required)
+        EX: 
+            1. Business:  What are your company's products? What are their prices?...etc
+            2. Learning:  What Grades Your Institution teach? What special activities do you provide?...etc
+            ...etc
+  - Targeted Audience (Who will visit and benefit from this website?) (Optional)
+  - Company Logo or Brand (From the Global logo uploaded by the user previously) (Required)
+  - Extra information:
+      - Business Email (Required)
+      - Telephone (Optional)
+      - Social media (Facebook, X, Telegram, WhatsApp...etc) (Required)
+      - Business Geographic location (Required)
+      - Partners,sponsors and common donators. (Optional)
+      - Any license , Terms of use or Privacy Policy (Required)
+      
+
+
+
+
+# Prompt link:
+https://console.anthropic.com/workbench/5b24f4bf-9467-45e3-8346-e8dcb4512d7d
+
+
+# PROMPT GENERATOR
+Create a one-page website with the following sections, here's every section possible with its varibles:
+- Nice Looking Header: website title (or logo for companies) and navigation tabs.
+- Carrousell with time elapsed indicator: images links, switch time duration and big title with some small caption below it for each image
+- Paragraph: title, content
+- Products/Services: product/links names, preview image links, captions
+- FAQ: questions and answers
+- FeedBack form
+- Website Reviews: Website review's count
+- Online Products Order
+- Footer: Contact info: Telephone number, Company location (if applicable), social media links
+The Website theme configuration with its variables:
+- Main Color: user specify it with variables
+- Main Font:  user specify it with variables
+- Style Provider: Css or tailwindcss - variable
+Notes: 
+- The output should include the code only without any additional text of any type.
+- Make a variable for every mentioned variable in the sections above
+- Make the design as modern and eleghant as possible.
+- The tabs in navigation tab should take you to the different sections of the page with their section id attribute.
+- The code should use either CSS or Tailwind or Both as specified in Style Provider variable
+
+# SYSTEM PROMPT
+Your task is to create a one-page website based on the given specifications, delivered as an HTML file with embedded JavaScript and plain css/tailwind. The website should incorporate a variety of engaging and interactive design features, such as drop-down menus, dynamic text and content, clickable buttons, and more. Ensure that the design is visually appealing, responsive, and user-friendly. The HTML, CSS/tailwindcss(from https://cdn.tailwindcss.com), and JavaScript code should be well-structured, efficiently organized, and properly commented for readability and maintainability.You have to output the code only no other text of any kind is allowed.
+
+# Latest PROMPT
+You are tasked with creating a modern and elegant one-page website using HTML and CSS or Tailwind CSS. The website should include various sections as specified. Your goal is to generate only the code for this website, without any additional text or explanations.
+
+Begin by creating the basic HTML structure. Then, add each section of the website in the order they are listed below. Use the provided variables to populate the content of each section. Remember to style the website according to the specified theme configuration.
+
+Here's the structure you should follow:
+
+1. Start with the HTML doctype and open the <html> tag.
+2. In the <head> section, include the necessary meta tags, title, and link to the stylesheet.
+3. Open the <body> tag and create a container for the entire page content.
+4. Create the header section with the website title (or logo from {{LOGO}} if applicable) and navigation tabs.
+5. Add the carousel section with images , time elapsed indicator and a fixed title with some text below it.
+6. Add a hero section with a "Get Started" Button in the middle with some text below it.
+7. Include the paragraph section with a title and content.
+8. Create the products/services section with names, preview images, and captions.
+9. Add an explainer video section which contain a video from a provided link, with a title above it.
+9. Add Website Services Review section with star rating, reviewer name and his/her comment, create reviews by reviews count variable.
+10. Add the FAQ section with questions and answers.
+11. Include a feedback form.
+12. Add an online products order form.
+13. Create the footer with contact information, including telephone number, company location (if applicable), and social media links.
+14. Close the container, body, and html tags.
+15. If using CSS, add a <style> section in the head with all the necessary styles. If using Tailwind CSS, make sure to include the appropriate classes in your HTML elements.
+
+Use the following variables in your code:
+
+<website_title>
+{{WEBSITE_TITLE}}
+</website_title>
+
+<navigation_tabs>
+{{NAVIGATION_TABS}}
+</navigation_tabs>
+
+<carousel_images>
+{{CAROUSEL_IMAGES}}
+</carousel_images>
+
+<carousel_title>
+{{CAROUSEL_TITLE}}
+</carousel_title>
+
+<carousel_caption>
+{{CAROUSEL_CAPTION}}
+</carousel_caption>
+
+
+<carousel_duration>
+{{CAROUSEL_DURATION}}
+</carousel_duration>
+
+<hero_section>
+{{HERO_SECTION_TEXT}}
+</hero_section>
+
+<paragraph_title>
+{{PARAGRAPH_TITLE}}
+</paragraph_title>
+
+<paragraph_content>
+{{PARAGRAPH_CONTENT}}
+</paragraph_content>
+
+<EXPLAINER_VIDEO>
+{{EXPLAINER_VIDEO_LINK}}
+</EXPLAINER_VIDEO>
+
+<products_services>
+{{PRODUCTS_SERVICES}}
+</products_services>
+
+<reviews_count>
+{{REVIEWS_COUNT}}
+</reviews_count>
+
+<faq>
+{{FAQ}}
+</faq>
+
+<contact_info>
+{{CONTACT_INFO}}
+</contact_info>
+
+<main_color>
+{{MAIN_COLOR}}
+</main_color>
+
+<main_font>
+{{MAIN_FONT}}
+</main_font>
+
+<style_provider>
+{{STYLE_PROVIDER}}
+</style_provider>
+
+Ensure that your code is clean, well-structured, and follows best practices for HTML and CSS/Tailwind CSS. Make the design as modern and elegant as possible, utilizing the main color and font specified in the theme configuration.
+
+Do not include any explanations or additional text outside of these tags.
+Make the website simple but complete and include the whole details.
+
+The tabs in navigation tab should take you to the different, sections of the page with their section id attribute, you can't create a tab for a non existing section ID.
+
+The Header should be sticky.
+If there's a link to a logo image provided, make sure it fits within the header.
+Always identify website type from its title and adapt the template to it.
+Generate carousel that switches slides automatically. The carousel should have smooth slide transitions, navigation buttons (previous and next), and a time-elapsed progress bar for each image. Ensure the carousel is responsive and works well on both desktop and mobile. Keep the structure clean and easy to customize.
