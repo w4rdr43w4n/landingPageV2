@@ -51,8 +51,6 @@ Required Paramaeters:
       
 
 
-
-
 # Prompt link:
 https://console.anthropic.com/workbench/5b24f4bf-9467-45e3-8346-e8dcb4512d7d
 
