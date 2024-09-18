@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../Toolkit/Modal";
 import { carousel } from "@/lib/config/types";
 import ImgList from "../Toolkit/ImgList";
@@ -21,15 +21,27 @@ export default function CarouselField({ setCarousel }: CarouselFieldProps) {
     images: [],
   });
   const handleNewImage = () => {
-    setData((prev) => ({ ...prev, images: [...prev.images, link] }));
+    setData((prev) => {
+      const updatedData = { ...prev, images: [...prev.images, link] };
+      return updatedData;
+    });
     setCModal(false);
-    setCarousel({ carousel: data });
   };
-
+  const handleSetImage = (newImgs: string[]) => {
+    setData((prev) => {
+      const updated = { ...prev, images: [...newImgs] };
+      return updated;
+    });
+  };
   const handleSetConfig = (newValue: any) => {
-    setData((prev) => ({ ...prev, ...newValue }));
-    setCarousel({ carousel: data });
+    setData((prev) => {
+      const updated = { ...prev, ...newValue };
+      return updated;
+    });
   };
+  useEffect(() => {
+    setCarousel({ carousel: data });
+  }, [data]);
   return (
     <section className="flex flex-col min-w-64 p-1 w-fit h-fit">
       <label className="text-slate-950 text-[0.85rem] font-bold">
@@ -66,7 +78,7 @@ export default function CarouselField({ setCarousel }: CarouselFieldProps) {
             </button>
           </div>
         </Modal>
-        <ImgList links={data.images} />
+        <ImgList onRemove={handleSetImage} links={data.images} />
         <button
           onClick={() => setCModal(true)}
           className="px-4 py-2 font-extrabold text-[18px] bg-slate-950 hover:opacity-100 opacity-85 text-white rounded"

@@ -29,7 +29,7 @@ export default function Img({
   return (
     <>
       {isValid ? (
-        <div style={{width,height}}>
+        <div style={{ width, height }}>
           <img
             src={src}
             alt={alt}
