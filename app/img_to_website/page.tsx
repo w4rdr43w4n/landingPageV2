@@ -8,12 +8,14 @@ export default function Page() {
   const [Instr, setInstr] = useState<string | null>(null);
   const [code, setSourceCode] = useState<string | null>(null);
   return (
-    <main className="p-5 flex flex-col justify-center items-center h-full gap-2">
-      {Instr ? (
-        <Desc2Web Instr={Instr} />
-      ) : (
-        <ImageAnalyzer setInstr={setInstr} />
-      )}
-    </main>
+    <>
+      <main className="p-5 flex flex-col justify-center items-center h-full gap-2">
+        {Instr ? (
+          <Desc2Web Instr={Instr} />
+        ) : (
+          <ImageAnalyzer setInstr={setInstr} />
+        )}
+      </main>
+    </>
   );
 }
