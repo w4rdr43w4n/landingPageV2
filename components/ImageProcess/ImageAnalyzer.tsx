@@ -4,6 +4,7 @@ import React, { useState, DragEvent } from "react";
 import { analyzeImage } from "@/lib/img2web/gemini";
 import { ImageData } from "@/components/config/types";
 import { adjustSize } from "@/lib/utils";
+import LoadingAnimation from "../Animations/Loading";
 
 export default function ImageAnalyzer({
   setInstr,
@@ -88,36 +89,46 @@ export default function ImageAnalyzer({
         id="selector"
       />
       {base64 ? (
-        <div className="flex flex-col gap-10">
-          <div className="relative">
-            <img
-              src={base64}
-              alt="Dropped"
-              className="w-56 h-56 rounded-md object-cover"
-            />
-            <div className="flex flex-row w-full bg-slate-600 h-fit text-white p-5 absolute bottom-0 opacity-85 items-center justify-center gap-3">
-              <p className="font-bold text-sm">{image?.image_name}</p>
-              <p className="font-bold">{image?.image_size}</p>
+        <div>
+          {loading ? (
+            <LoadingAnimation />
+          ) : (
+            <div className="flex flex-col gap-10">
+              <div className="relative">
+                <img
+                  src={base64}
+                  alt="Dropped"
+                  className="w-56 h-56 rounded-md object-cover"
+                />
+                <div className="flex flex-row w-full bg-slate-600 h-fit text-white p-5 absolute bottom-0 opacity-85 items-center justify-center gap-3">
+                  <p className="font-bold text-sm">{image?.image_name}</p>
+                  <p className="font-bold">{image?.image_size}</p>
+                  <button
+                    disabled={loading}
+                    onClick={handleRemove}
+                    className="bg-red-500 w-16 text-[12px] text-white font-bold p-1 rounded-md duration-300 disabled:opacity-50 "
+                  >
+                    X
+                  </button>
+                </div>
+              </div>
               <button
+                className="text-white font-bold border-none disabled:opacity-50 bg-teal-900 p-5 shadow-md duration-200  rounded-md"
+                onClick={handleAnalyze}
                 disabled={loading}
-                onClick={handleRemove}
-                className="bg-red-500 w-16 text-[12px] text-white font-bold p-1 rounded-md duration-300 disabled:opacity-50 "
               >
-                X
+                {loading ? "Analyzing" : "Analyze Image"}
               </button>
             </div>
-          </div>
-          <button
-            className="text-white font-bold border-none disabled:opacity-50 bg-teal-900 p-5 shadow-md duration-200  rounded-md"
-            onClick={handleAnalyze}
-            disabled={loading}
-          >
-            {loading ? "Analyzing" : "Analyze Image"}
-          </button>
+          )}
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center gap-5 w-[300px]">
-          <p className={`${Drag ? "text-green-500":"text-slate-500"} transition-all`}>
+          <p
+            className={`${
+              Drag ? "text-green-500" : "text-slate-500"
+            } transition-all`}
+          >
             {Drag
               ? "Drop The Image Now"
               : "Drag or Choose an Image to be analyzed"}{" "}

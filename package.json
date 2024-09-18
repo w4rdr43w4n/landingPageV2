@@ -12,6 +12,7 @@
     "@anthropic-ai/sdk": "^0.26.1",
     "@google-cloud/vision": "^4.3.2",
     "@google/generative-ai": "^0.17.1",
+    "@lottiefiles/dotlottie-react": "^0.8.12",
     "axios": "^1.7.5",
     "next": "14.2.5",
     "openai": "^4.55.7",

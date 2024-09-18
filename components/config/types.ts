@@ -1,4 +1,4 @@
-import { WebSpecType } from "@/lib/config/types";
+import { avStylers, WebSpecType } from "@/lib/config/types";
 
 export interface ImageData {
   image_name: string;
@@ -39,9 +39,15 @@ export const placeholders:WebSpecType = {
     hours:"5AM-6PM"
   },
   website_theme:{
-    main_color:"blackAndBlue",
+    main_color:{
+      primary:"",
+      secondary:""
+    },
     main_font:"Roboto",
-    style_provider:"tailwind"
+    style_provider:avStylers.PlainCSS
   }
 
 };
+export enum LottieAnimationsURLS{
+  Loading = "https://lottie.host/5ef5498d-daf9-4a0d-b426-3f96fa52fda2/51X8sN4m25.json"
+}
