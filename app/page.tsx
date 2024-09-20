@@ -9,14 +9,20 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col items-center justify-center p-8 gap-10">
-        <h1
-          className="font-bold text-xl text-sky-500"
-          style={{ fontSize: "45px" }}
-        >
-          Landing Page Generator
-        </h1>
-        <GenerateField setCode={setCode} />
-        <Preview code={code} />
+        <section className="flex flex-row gap-2">
+          <a
+            className="text-white font-extrabold bg-teal-900 text-xl rounded-md p-2"
+            href="/web_gen"
+          >
+            Custom AI Generated Website Tool
+          </a>
+          <a
+            className="text-white font-extrabold bg-teal-900 text-xl rounded-md p-2"
+            href="/img_to_website"
+          >
+            Image to Website Tool
+          </a>
+        </section>
       </main>
     </>
   );

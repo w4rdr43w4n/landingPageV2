@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
-import { GenerateFieldProps } from "../config/types";
+
+interface GenerateFieldProps {
+  setCode: (value: string) => void;
+}
 
 export default function GenerateField({ setCode }: GenerateFieldProps) {
   const [disc, setDisc] = useState("");
@@ -10,11 +13,15 @@ export default function GenerateField({ setCode }: GenerateFieldProps) {
   const handleClick = async () => {
     try {
       setStatus("Generating...");
-      const resp = await getHTML(disc);
+      const resp = await Promise.resolve({
+        html: "",
+        isGenerated: true,
+        erroMsg: "",
+      });
       console.log(resp.html);
       if (resp.isGenerated) {
         setCode(resp.html);
-      } else alert(resp.errorMsg);
+      } else alert(resp.erroMsg);
     } catch (err: any) {
       console.log(err.message);
     } finally {

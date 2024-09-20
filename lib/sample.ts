@@ -22,7 +22,7 @@ const carousel: Caro = {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhgllziZWjBXkAItMQn26U_z0h9lYjmSS7XqvXTPM_Bouf-7B_ppWUpGLsEF_YKYtoais&usqp=CAU",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE_JU3UkJjOKVUCuN92YEzlU-5Rg8ps35zE5w9eQrTSVPvfD72wqmY3Npa0zloONAyomM&usqp=CAU",
   ],
-  duration: 5000,
+  duration: 5,
 };
 
 export const paragraphs: paragraph[] = [

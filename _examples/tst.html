@@ -3,105 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title</title>
+    <title>Green Thumb Gardens</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Lato', sans-serif; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="sticky top-0 bg-white shadow-md z-50">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold">
-                <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="title" class="h-8">
+            <a href="#" class="flex items-center">
+                <img src="https://example.com/images/green-thumb-gardens-logo.png" alt="Green Thumb Gardens" class="h-12 mr-3">
+                <span class="text-2xl font-bold text-green-700">Green Thumb Gardens</span>
             </a>
-            <div class="flex space-x-4">
-                <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
-                <a href="#products" class="text-gray-600 hover:text-gray-900">Products</a>
-                <a href="#video" class="text-gray-600 hover:text-gray-900">Video</a>
-                <a href="#reviews" class="text-gray-600 hover:text-gray-900">Reviews</a>
-                <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#services" class="text-green-700 hover:text-green-500">Services</a>
+                <a href="#about" class="text-green-700 hover:text-green-500">About</a>
+                <a href="#reviews" class="text-green-700 hover:text-green-500">Reviews</a>
+                <a href="#faq" class="text-green-700 hover:text-green-500">FAQ</a>
+                <a href="#contact" class="text-green-700 hover:text-green-500">Contact</a>
             </div>
+            <button class="md:hidden text-green-700">
+                <i class="fas fa-bars"></i>
+            </button>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="relative h-screen">
-            <div class="carousel relative h-full overflow-hidden">
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                    <img src="https://live-production.wcms.abc-cdn.net.au/993fcd282fdce29e6f2f6f633966fb1c?impolicy=wcms_crop_resize&cropH=1688&cropW=3000&xPos=0&yPos=94&width=862&height=485" alt="Carousel Image 1" class="w-full h-full object-cover">
-                </div>
-                <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-                    <img src="https://live-production.wcms.abc-cdn.net.au/993fcd282fdce29e6f2f6f633966fb1c?impolicy=wcms_crop_resize&cropH=1688&cropW=3000&xPos=0&yPos=94&width=862&height=485" alt="Carousel Image 2" class="w-full h-full object-cover">
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center text-white text-center">
-                    <div>
-                        <h1 class="text-4xl font-bold mb-4">carousel text</h1>
-                        <p class="text-xl mb-8">secondary carousel text</p>
-                        <a href="#" class="bg-white text-gray-900 px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300">Get Started</a>
-                    </div>
-                </div>
-                <div class="absolute bottom-0 left-0 right-0 h-1 bg-gray-300">
-                    <div class="progress-bar h-full bg-white transition-all duration-1000 ease-linear" style="width: 0%"></div>
-                </div>
-                <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white text-gray-900 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white text-gray-900 p-2 rounded-full opacity-50 hover:opacity-100 transition duration-300">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+        <section id="carousel" class="relative h-96 overflow-hidden">
+            <div class="absolute inset-0 flex transition-transform duration-500 ease-in-out">
+                <div class="w-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/lush-garden.jpg')"></div>
+                <div class="w-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/modern-landscape.jpg')"></div>
+                <div class="w-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/water-feature.jpg')"></div>
+                <div class="w-full flex-shrink-0 bg-cover bg-center" style="background-image: url('https://example.com/images/outdoor-living-space.jpg')"></div>
+            </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black bg-opacity-50">
+                <h2 class="text-4xl font-bold mb-4">Transform Your Outdoor Space</h2>
+                <p class="text-xl mb-8">Professional landscaping and garden design services</p>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 h-1 bg-green-200">
+                <div class="h-full bg-green-500 transition-all duration-500 ease-linear" style="width: 0%"></div>
+            </div>
+            <button class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-3xl">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-3xl">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <section id="hero" class="bg-green-50 py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl font-bold text-green-700 mb-8">Welcome to Green Thumb Gardens</h1>
+                <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
+                    Welcome to Green Thumb Gardens, where we turn your outdoor dreams into reality. Our team of expert landscapers and garden designers is passionate about creating beautiful, sustainable, and functional outdoor spaces that reflect your unique style and enhance your quality of life. From small urban gardens to sprawling estates, we bring creativity, expertise, and a commitment to excellence to every project we undertake.
+                </p>
+                <a href="#contact" class="bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-500 transition duration-300">Get Started</a>
             </div>
         </section>
 
-        <section class="py-16 bg-white">
+        <section id="about" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">my paragraph</h2>
-                <p class="text-gray-600 mb-6 text-center">my text</p>
-                <p class="text-gray-600 mb-6 text-center">my text</p>
+                <h2 class="text-3xl font-bold text-green-700 mb-8 text-center">{t*}</h2>
+                <p class="text-lg text-gray-700 mb-6">{p*}</p>
             </div>
         </section>
 
-        <section id="products" class="py-16 bg-gray-100">
+        <section id="services" class="bg-white py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Our Products</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="samsung" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">samsung</h3>
-                            <p class="text-gray-600 mb-4">company</p>
-                            <p class="text-lg font-bold">$9999999999</p>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <img src="https://images.samsung.com/is/image/samsung/assets/global/about-us/brand/logo/256_144_1.png" alt="samsung" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">samsung</h3>
-                            <p class="text-gray-600 mb-4">company</p>
-                            <p class="text-lg font-bold">$9999999999</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="video" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Explainer Video</h2>
-                <div class="flex justify-center">
-                    <iframe width="640" height="360" src="https://www.youtube.com/embed/Y5dimbG5d5M" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section id="reviews" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Customer Reviews</h2>
+                <h2 class="text-3xl font-bold text-green-700 mb-12 text-center">Our Services</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="bg-green-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="https://via.placeholder.com/300" alt="Landscape Design" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 mb-2">Landscape Design</h3>
+                            <p class="text-gray-600 mb-4">Custom landscape plans tailored to your property and preferences.</p>
+                            <p class="text-green-600 font-bold">Starting at $1,500</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="https://via.placeholder.com/300" alt="Garden Installation" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 mb-2">Garden Installation</h3>
+                            <p class="text-gray-600 mb-4">Expert planting and arrangement of flowers, shrubs, and trees.</p>
+                            <p class="text-green-600 font-bold">Starting at $2,000</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="https://via.placeholder.com/300" alt="Hardscaping" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 mb-2">Hardscaping</h3>
+                            <p class="text-gray-600 mb-4">Installation of patios, walkways, retaining walls, and water features.</p>
+                            <p class="text-green-600 font-bold">Custom quote</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="https://via.placeholder.com/300" alt="Lawn Care" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 mb-2">Lawn Care</h3>
+                            <p class="text-gray-600 mb-4">Regular maintenance, including mowing, fertilizing, and weed control.</p>
+                            <p class="text-green-600 font-bold">From $150/month</p>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="https://via.placeholder.com/300" alt="Irrigation Systems" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-green-700 mb-2">Irrigation Systems</h3>
+                            <p class="text-gray-600 mb-4">Design and installation of efficient watering systems.</p>
+                            <p class="text-green-600 font-bold">Starting at $3,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="py-20 bg-green-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-green-700 mb-12 text-center">Our Process</h2>
+                <div class="flex justify-center">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/green_thumb_gardens_process" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-green-700 mb-12 text-center">Client Reviews</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
                         <div class="flex items-center mb-4">
                             <div class="text-yellow-400">
                                 <i class="fas fa-star"></i>
@@ -110,24 +143,12 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
+                            <span class="ml-2 text-gray-600">5.0</span>
                         </div>
-                        <p class="text-gray-600 mb-4">"Great product! Highly recommended."</p>
-                        <p class="font-bold">John Doe</p>
+                        <p class="text-gray-700 mb-4">"Green Thumb Gardens transformed our backyard into a beautiful oasis. Their attention to detail and creativity exceeded our expectations!"</p>
+                        <p class="font-bold text-green-700">- Sarah Johnson</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="text-yellow-400">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                        </div>
-                        <p class="text-gray-600 mb-4">"Very satisfied with my purchase."</p>
-                        <p class="font-bold">Jane Smith</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
                         <div class="flex items-center mb-4">
                             <div class="text-yellow-400">
                                 <i class="fas fa-star"></i>
@@ -136,175 +157,140 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
                             </div>
+                            <span class="ml-2 text-gray-600">4.5</span>
                         </div>
-                        <p class="text-gray-600 mb-4">"Excellent customer service!"</p>
-                        <p class="font-bold">Mike Johnson</p>
+                        <p class="text-gray-700 mb-4">"Professional, punctual, and passionate about their work. Our new landscape design has completely changed the look of our home."</p>
+                        <p class="font-bold text-green-700">- Michael Thompson</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="ml-2 text-gray-600">5.0</span>
+                        </div>
+                        <p class="text-gray-700 mb-4">"The team at Green Thumb Gardens is knowledgeable and friendly. They created a low-maintenance garden that we absolutely love!"</p>
+                        <p class="font-bold text-green-700">- Emily Rodriguez</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-16 bg-white">
+        <section id="faq" class="bg-green-50 py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="border-b border-gray-200 pb-4">
-                        <button class="flex items-center justify-between w-full">
-                            <span class="text-lg font-medium text-gray-900">whats your name?</span>
-                            <span class="ml-6 h-7 flex items-center">
-                                <i class="fas fa-chevron-down"></i>
-                            </span>
-                        </button>
-                        <div class="mt-4">
-                            <p class="text-gray-500">I'm hhhhh</p>
-                        </div>
+                <h2 class="text-3xl font-bold text-green-700 mb-12 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-700 mb-2">How long does a typical landscaping project take?</h3>
+                        <p class="text-gray-700">Project duration varies depending on the scope and complexity. Small projects may take 1-2 weeks, while larger transformations can take 4-8 weeks or more.</p>
                     </div>
-                    <div class="border-b border-gray-200 pb-4">
-                        <button class="flex items-center justify-between w-full">
-                            <span class="text-lg font-medium text-gray-900">whats not your name?</span>
-                            <span class="ml-6 h-7 flex items-center">
-                                <i class="fas fa-chevron-down"></i>
-                            </span>
-                        </button>
-                        <div class="mt-4">
-                            <p class="text-gray-500">wahahahaha</p>
-                        </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-700 mb-2">Do you offer eco-friendly landscaping options?</h3>
+                        <p class="text-gray-700">Yes, we specialize in sustainable landscaping practices, including native plant selection, water-efficient irrigation, and organic lawn care methods.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-700 mb-2">Can you work with my existing landscape design?</h3>
+                        <p class="text-gray-700">Absolutely! We can enhance or modify your current landscape, or start from scratch if you prefer a complete redesign.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-700 mb-2">Do you provide maintenance services after installation?</h3>
+                        <p class="text-gray-700">Yes, we offer ongoing maintenance plans to keep your landscape looking its best year-round. We can customize a plan to fit your needs and budget.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-green-700 mb-2">What areas do you serve?</h3>
+                        <p class="text-gray-700">We primarily serve the greater Portland metropolitan area, including surrounding suburbs within a 30-mile radius.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-16 bg-gray-100">
+        <section id="contact" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Feedback</h2>
-                <form class="max-w-lg mx-auto">
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                <h2 class="text-3xl font-bold text-green-700 mb-12 text-center">Contact Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-700 mb-4">Get in Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-500 transition duration-300">Send Message</button>
+                        </form>
                     </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-700 mb-4">Our Information</h3>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-green-600"></i>456 Willow Lane, Portland, OR 97201</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-green-600"></i>(503) 555-7890</p>
+                        <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2 text-green-600"></i>info@greenthumbgardens.com</p>
+                        <p class="text-gray-700 mb-4"><i class="fas fa-clock mr-2 text-green-600"></i>Monday-Friday 8am-6pm, Saturday 9am-3pm PST</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-green-600 hover:text-green-500"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#" class="text-green-600 hover:text-green-500"><i class="fab fa-facebook fa-2x"></i></a>
+                        </div>
                     </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Submit</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-8 text-center">Order Form</h2>
-                <form class="max-w-lg mx-auto">
-                    <div class="mb-4">
-                        <label for="product" class="block text-gray-700 font-bold mb-2">Product</label>
-                        <select id="product" name="product" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                            <option value="">Select a product</option>
-                            <option value="samsung">samsung</option>
-                        </select>
-                    </div>
-                    <div class="mb-4">
-                        <label for="quantity" class="block text-gray-700 font-bold mb-2">Quantity</label>
-                        <input type="number" id="quantity" name="quantity" min="1" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="address" class="block text-gray-700 font-bold mb-2">Address</label>
-                        <textarea id="address" name="address" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Place Order</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer id="contact" class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-wrap justify-between">
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">G6 Company</h3>
-                    <p>Hours: 5</p>
-                    <p>Email: wardrawan535@gmail.com</p>
-                    <p>Phone: +4915214787627</p>
-                </div>
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">Location</h3>
-                    <p>G6 Company</p>
-                </div>
-                <div class="w-full md:w-1/3">
-                    <h3 class="text-xl font-bold mb-2">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-gray-400 transition duration-300">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+    <footer class="bg-green-700 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Green Thumb Gardens. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
         // Carousel functionality
-        const carousel = document.querySelector('.carousel');
-        const slides = carousel.querySelectorAll('.slide');
-        const progressBar = carousel.querySelector('.progress-bar');
-        const prevBtn = carousel.querySelector('.fa-chevron-left').parentElement;
-        const nextBtn = carousel.querySelector('.fa-chevron-right').parentElement;
+        const carousel = document.querySelector('#carousel > div');
+        const slides = carousel.children;
+        const progressBar = document.querySelector('#carousel .bg-green-500');
         let currentSlide = 0;
-        const slideDuration = 5000; // 5 seconds
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
-            currentSlide = index;
-            updateProgressBar();
-        }
+        const intervalTime = 5000;
 
         function nextSlide() {
-            showSlide((currentSlide + 1) % slides.length);
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateCarousel();
         }
 
-        function prevSlide() {
-            showSlide((currentSlide - 1 + slides.length) % slides.length);
-        }
-
-        function updateProgressBar() {
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
             progressBar.style.width = '0%';
+            progressBar.style.transition = 'none';
             setTimeout(() => {
+                progressBar.style.transition = 'width 5s linear';
                 progressBar.style.width = '100%';
-            }, 50);
+            }, 10);
         }
 
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
+        setInterval(nextSlide, intervalTime);
 
-        showSlide(0);
-        setInterval(nextSlide, slideDuration);
+        // Mobile menu toggle
+        const menuButton = document.querySelector('button.md\\:hidden');
+        const mobileMenu = document.querySelector('div.hidden.md\\:flex');
 
-        // FAQ functionality
-        const faqButtons = document.querySelectorAll('#faq button');
-        faqButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                answer.classList.toggle('hidden');
-                icon.classList.toggle('fa-chevron-down');
-                icon.classList.toggle('fa-chevron-up');
-            });
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            mobileMenu.classList.toggle('flex-col');
+            mobileMenu.classList.toggle('absolute');
+            mobileMenu.classList.toggle('top-16');
+            mobileMenu.classList.toggle('right-0');
+            mobileMenu.classList.toggle('bg-white');
+            mobileMenu.classList.toggle('p-4');
+            mobileMenu.classList.toggle('shadow-md');
         });
     </script>
 </body>

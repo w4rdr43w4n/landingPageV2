@@ -19,7 +19,7 @@ export default function ImgList({ links, onRemove }: Props) {
           key={index}
           className="relative h-fit w-fit group duration-500 ease-in-out "
         >
-          <Img src={link} alt={`image ${index}`} width={50} />
+          <Img dark src={link} alt={`image ${index}`} width={50} />
           <button
             onClick={() => handleRemoveAtIndex(index)}
             className="absolute opacity-0 group-hover:opacity-100 duration-300 ease-in-out top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 backdrop-blur-md w-full h-full rounded-md"

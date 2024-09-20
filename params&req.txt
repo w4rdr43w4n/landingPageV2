@@ -1,6 +1,6 @@
 Required Paramaeters:
   - Website type :
-     - Types: 
+     - Types: Business, Portfolio, Blog, Learning,  Entertainment, Medical
         1. Business:
               Ex: Store, Company..
         2. Ecommerce 

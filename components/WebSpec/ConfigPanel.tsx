@@ -10,48 +10,42 @@ import Paragraphs from "./Paragraphs";
 import Contact from "./Contact";
 import ThemeConfig from "./ThemeConfig";
 import Img from "../Toolkit/Img";
+import SelectCategory from "./Category";
+import { NoneCommercialWebsites } from "../config/config";
+import CircularProgress from "@mui/material/CircularProgress";
+import ImgLink from "../Toolkit/ImgWInput";
 
-interface ConfigProps{
-  setCode:(value:string)=>void
+interface ConfigProps {
+  setCode: (value: string) => void;
 }
 
-export default function ConfigPanel({setCode}:ConfigProps) {
+export default function ConfigPanel({ setCode }: ConfigProps) {
   const [config, setConfig] = useState<WebSpecType>();
-  const [isloading,setLoadingState]=useState(false)
+  const [isloading, setLoadingState] = useState(false);
   const handleChange = (newValue: any) => {
     setConfig((prev) => ({ ...prev, ...newValue }));
   };
   const handleGenerate = async () => {
     const web = new WebSpec(config);
-    console.log(web.prompt)
-    try{
-      setLoadingState(true)
+    try {
+      setLoadingState(true);
       const resp = await web.generate();
-      if(resp)setCode(resp)
-      else alert("Something went wrong!")
-    }catch(err:any){
-      setLoadingState(false)
-      console.log(err.message)
-    }finally{
-      setLoadingState(false)
+      if (resp) setCode(resp);
+      else alert("Something went wrong!");
+    } catch (err: any) {
+      setLoadingState(false);
+      console.log(err.message);
+    } finally {
+      setLoadingState(false);
     }
   };
 
   return (
     <section className="flex flex-col gap-2">
-      <section className="flex flex-row gap-4 bg-slate-700 w-fit h-fit p-5 rounded-md overflow-y-auto">
-        <section className=" flex flex-col flex-1 min-w-24 gap-2">
-          <section className="flex flex-row gap-2 items-end justify-center overflow-x-auto">
-            {config?.logo_link && config?.logo_link.length > 0 && (
-              <Img alt="logo" src={config?.logo_link} width={100} height={50} />
-            )}
-            <InputField
-              placeholder={placeholders.logo_link}
-              control={handleChange}
-              label="Logo Link"
-              property="logo_link"
-            />
-          </section>
+      <section className="flex flex-row gap-4 bg-slate-700 w-fit h-fit p-5 max-h-[70vh] rounded-md overflow-y-auto">
+        <section className=" flex flex-col flex-1 items-center min-w-24 gap-2">
+          <ImgLink setLogo={handleChange} />
+          <SelectCategory setType={handleChange} />
           <InputField
             placeholder={placeholders.website_title}
             control={handleChange}
@@ -65,7 +59,10 @@ export default function ConfigPanel({setCode}:ConfigProps) {
             type="number"
           />
           <FAQField setFAQs={handleChange} />
-          <Services setServices={handleChange} />
+          {config?.website_type &&
+            !NoneCommercialWebsites.includes(config?.website_type) && (
+              <Services setServices={handleChange} />
+            )}
           <Paragraphs setPs={handleChange} />
           <ThemeConfig setTheme={handleChange} />
         </section>
@@ -89,18 +86,27 @@ export default function ConfigPanel({setCode}:ConfigProps) {
         </section>
       </section>
       <section className="flex flex-row gap-3">
-        { <button
-          onClick={() => console.log("Config:", JSON.stringify(config))}
-          className="p-2 font-extrabold text-white bg-teal-900 rounded-md h-fit"
-        >
-          Get Config
-        </button>}
+        {/*
+          <button
+            onClick={() => console.log("Config:", JSON.stringify(config))}
+            className="p-2 font-extrabold text-white bg-teal-900 rounded-md h-fit"
+          >
+            Get Config
+          </button>
+        */}
         <button
           onClick={handleGenerate}
           disabled={isloading}
           className="p-2 disabled:opacity-50 font-extrabold text-white bg-indigo-900 rounded-md h-fit"
         >
-         {isloading ? "Processing...":"Generate"}
+          {isloading ? (
+            <div className="flex flex-row gap-2 justify-center items-center">
+              <CircularProgress size="24px" className="text-white" />
+              <p className="p-1">Processing</p>
+            </div>
+          ) : (
+            <p className="p-1">Generate</p>
+          )}
         </button>
       </section>
     </section>

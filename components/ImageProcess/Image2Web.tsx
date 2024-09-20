@@ -27,7 +27,7 @@ export default function Desc2Web({ Instr }: { Instr: string }) {
   return (
     <>
       {srcCode ? (
-        <Preview code={srcCode} />
+        <Preview code={srcCode} setCode={setSourceCode} />
       ) : (
         <main className="border-indigo-950 border-dashed rounded-md p-5 border-[4px] flex flex-col justify-center items-center gap-4">
           <textarea

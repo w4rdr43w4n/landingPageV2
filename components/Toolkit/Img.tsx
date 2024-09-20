@@ -4,6 +4,7 @@ interface ImgProps {
   src: string;
   alt: string;
   width?: number | string;
+  dark: boolean;
   height?: number | string;
 }
 
@@ -12,6 +13,7 @@ export default function Img({
   alt,
   width = 50,
   height = width,
+  dark = true,
 }: ImgProps) {
   const [isValid, setIsValid] = useState(false);
 
@@ -38,12 +40,23 @@ export default function Img({
           />
         </div>
       ) : (
-        <div
-          className={`flex items-center justify-center rounded-md bg-white border border-gray-300`}
-          style={{ width, height }}
-        >
-          <span className="text-black text-xl font-extrabold">?</span>
-        </div>
+        <>
+          {dark ? (
+            <div
+              className={`flex items-center justify-center rounded-md bg-slate-900 border border-gray-600`}
+              style={{ width, height }}
+            >
+              <span className="text-white text-xl font-extrabold">?</span>
+            </div>
+          ) : (
+            <div
+              className={`flex items-center justify-center rounded-md bg-white border border-gray-300`}
+              style={{ width, height }}
+            >
+              <span className="text-black text-xl font-extrabold">?</span>
+            </div>
+          )}
+        </>
       )}
     </>
   );

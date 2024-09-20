@@ -3,6 +3,7 @@ import Modal from "../Toolkit/Modal";
 import { contact_info } from "@/lib/config/types";
 import InputField from "../Toolkit/InputField";
 import { placeholders } from "../config/types";
+import HoursInterval from "../Toolkit/hoursInterval";
 
 interface ContactProps {
   setContact: (value: any) => void;
@@ -31,7 +32,7 @@ export default function Contact({ setContact }: ContactProps) {
       </button>
       <Modal title="Contact Info" open={modalC} onClose={setModalC}>
         <InputField
-          label="Company Name"
+          label="Institution Name (Optional)"
           placeholder={placeholders.contact_info?.company_name}
           control={handleSetData}
           property="company_name"
@@ -57,15 +58,9 @@ export default function Contact({ setContact }: ContactProps) {
         />
         {data.company_name.length > 0 && (
           <div>
+            <HoursInterval setHours={handleSetData} />
             <InputField
-              label="Open Hours"
-              type="number"
-              placeholder={placeholders.contact_info?.hours}
-              control={handleSetData}
-              property="hours"
-            />
-            <InputField
-              label="Company Location"
+              label="Location"
               placeholder={placeholders.contact_info?.location}
               control={handleSetData}
               property="location"
