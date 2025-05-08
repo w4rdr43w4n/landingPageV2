@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function analyzeImage(base64Image: string) {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!!);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
   const prompt = `Analyze this website image and provide a detailed description including:
 1. Overall layout and structure
@@ -30,18 +30,17 @@ Be as specific as possible about the layout and design elements.
       {
         inlineData: {
           data: base64Image,
-          mimeType: "image/png" || "image/jpeg"
+          mimeType: "image/png",
         },
       },
-      
     ]);
 
     const response = result.response;
     const analysis = response.text();
-    console.log(analysis)
-    return  {analysis:analysis.replaceAll('*',"")} ;
-  } catch (error:any) {
-    console.error('Error analyzing image:', error);
-    return error.message
+    console.log(analysis);
+    return { analysis: analysis.replaceAll("*", "") };
+  } catch (error: any) {
+    console.error("Error analyzing image:", error);
+    return error.message;
   }
 }

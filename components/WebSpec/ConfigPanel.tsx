@@ -51,6 +51,7 @@ export default function ConfigPanel({ setCode }: ConfigProps) {
             control={handleChange}
             label="Website Title"
             property="website_title"
+            value={config?.website_title}
           />
           <InputField
             control={handleChange}

@@ -6,6 +6,7 @@ interface InputFieldProps {
   placeholder?: string;
   type?: "text" | "number" | "textarea" | "email";
   property?: string;
+  value?:any;
 }
 export default function InputField({
   label="",
@@ -13,6 +14,7 @@ export default function InputField({
   control,
   property,
   type = "text",
+  value
 }: InputFieldProps) {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (property) control({ [property]: e.target.value });
@@ -29,6 +31,7 @@ export default function InputField({
         placeholder={placeholder}
         className="text-wrap overflow-y-auto w-[250px] min-h-11 max-h-44 text-black placeholder:text-indigo-950 outline-none rounded-md p-2 bg-slate-500 border-slate-700 border-[3px] opacity-80 focus:opacity-100"
         onChange={handleChangeTextArea}
+        value={value}
       ></textarea>
     );
   else
@@ -42,6 +45,7 @@ export default function InputField({
             onChange={handleChange}
             type={type}
             placeholder={placeholder}
+            value={value}
             className="opacity-80 focus:opacity-100 outline-none text-white p-4 text-[14px] rounded-md bg-gray-900 border-none w-full h-full" required
           />
         ) : (
@@ -50,6 +54,7 @@ export default function InputField({
             type={type}
             defaultValue={type=== "number"?2:""}
             min={0}
+            value={value}
             className="opacity-80 focus:opacity-100 outline-none text-white p-4 text-[14px] rounded-md bg-gray-900 border-none w-full h-full" required
           />
         )}
