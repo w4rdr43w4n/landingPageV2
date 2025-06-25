@@ -1,0 +1,74 @@
+"use server";
+
+import fs from "fs";
+import path from "path";
+import { ClaudeHTMLResp, fixedResp, Temp } from "../types";
+import { ClaudeConfig, TempSrc } from "../config";
+import Anthropic from "@anthropic-ai/sdk";
+import { constructPrompt } from "@/lib/utils";
+
+export async function loadTemplates() {
+  const result: Temp[] = [];
+
+  const folders = fs.readdirSync(TempSrc);
+
+  for (const folder of folders) {
+    const folderPath = path.join(TempSrc, folder);
+    if (!fs.statSync(folderPath).isDirectory()) continue;
+
+    const html = readSafe(path.join(folderPath, "index.html"));
+    const css = readSafe(path.join(folderPath, "style.css"));
+
+    result.push({ name: folder, html: disableLinks(html), css });
+  }
+  return result;
+}
+
+const anthropic_client = new Anthropic({
+  apiKey: process.env.ANTHROPIC_API_KEY!!,
+});
+
+export async function generateEdits(
+  prompt: string,
+  temp: Temp
+): Promise<ClaudeHTMLResp> {
+  try {
+    const msg = await anthropic_client.messages.create({
+      model: "claude-3-5-sonnet-20240620",
+      max_tokens: 7700,
+      temperature: 0.1,
+      system: ClaudeConfig.prompt2web_system_prompt,
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "text",
+              text: constructPrompt(temp.html, temp.css, prompt),
+            },
+          ],
+        },
+      ],
+    });
+    return msg
+      ? { success: true, source_code: (msg.content[0] as fixedResp).text }
+      : {
+          success: false,
+          source_code: "",
+          errMsg: "Generation Process Failed",
+        };
+  } catch (err: any) {
+    throw new Error(err.message);
+  }
+}
+
+/* Utils */
+function readSafe(filePath: string) {
+  return fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : "";
+}
+
+function disableLinks(htmlString: string) {
+  return htmlString
+    .replace(/<a\s+[^>]*href="[^"]*"[^>]*>/gi, "<span>")
+    .replace(/<\/a>/gi, "</span>");
+}

@@ -250,3 +250,41 @@ export class WebSpec {
     return website.success ? website.source_code : website.errMsg;
   }
 }
+
+/* Prompt Types */
+export type Temp = {
+  name: string;
+  html: string;
+  css: string;
+};
+
+export interface SelectorProps {
+  setStep: (step: steps) => void;
+  setChosen: (value: Temp | null) => void;
+}
+export interface SliderProps extends SelectorProps {
+  slides: Temp[];
+}
+export interface GenProps {
+  temp: Temp;
+  setStep: (value: steps) => void;
+  setResult: (value: string | null) => void;
+}
+export interface PromptProps {
+  prompt: String;
+  setPrompt: (value: string) => void;
+}
+export interface EditProps {
+  html: string;
+  setStep: (value: steps) => void;
+}
+export interface GenPromptProps {
+  step: steps;
+  setStep: (value: steps) => void;
+}
+
+export enum steps {
+  CHOOSE,
+  PROMPT,
+  PREVIEW,
+}

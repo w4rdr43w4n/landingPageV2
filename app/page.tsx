@@ -22,6 +22,12 @@ export default function Home() {
           >
             Image to Website Tool
           </a>
+          <a
+            className="text-yellow-400 font-extrabold bg-indigo-800 text-xl rounded-md p-2"
+            href="/prmpt2web"
+          >
+            Prompt Tool
+          </a>
         </section>
       </main>
     </>

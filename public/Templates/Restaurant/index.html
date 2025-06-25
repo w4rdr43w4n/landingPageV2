@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bella Vista - Italian Restaurant</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="logo">Bella Vista</div>
+          <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <button class="reserve-btn">Reserve Table</button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Authentic Italian Cuisine</h1>
+        <p>Experience the taste of Italy in the heart of the city</p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn-primary">View Menu</a>
+          <a href="#contact" class="btn-secondary">Reserve Now</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="food-showcase"></div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">🍝</div>
+            <h3>Fresh Pasta</h3>
+            <p>Handmade daily with traditional recipes</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🍕</div>
+            <h3>Wood-fired Pizza</h3>
+            <p>Authentic Neapolitan style pizza</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🍷</div>
+            <h3>Fine Wine</h3>
+            <p>Curated selection of Italian wines</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu">
+      <div class="container">
+        <h2>Our Menu</h2>
+        <div class="menu-categories">
+          <button class="menu-tab active" data-category="appetizers">
+            Appetizers
+          </button>
+          <button class="menu-tab" data-category="pasta">Pasta</button>
+          <button class="menu-tab" data-category="pizza">Pizza</button>
+          <button class="menu-tab" data-category="desserts">Desserts</button>
+        </div>
+
+        <div class="menu-content">
+          <div class="menu-category active" id="appetizers">
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Bruschetta al Pomodoro</h4>
+                <p>Grilled bread with fresh tomatoes, basil, and garlic</p>
+              </div>
+              <div class="item-price">$12</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Antipasto Misto</h4>
+                <p>
+                  Selection of cured meats, cheeses, and marinated vegetables
+                </p>
+              </div>
+              <div class="item-price">$18</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Arancini</h4>
+                <p>Crispy risotto balls with mozzarella and marinara sauce</p>
+              </div>
+              <div class="item-price">$14</div>
+            </div>
+          </div>
+
+          <div class="menu-category" id="pasta">
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Spaghetti Carbonara</h4>
+                <p>Classic Roman pasta with eggs, pancetta, and pecorino</p>
+              </div>
+              <div class="item-price">$22</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Fettuccine Alfredo</h4>
+                <p>Creamy butter and parmesan sauce with fresh fettuccine</p>
+              </div>
+              <div class="item-price">$20</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Lasagna della Casa</h4>
+                <p>Homemade layers of pasta, meat sauce, and three cheeses</p>
+              </div>
+              <div class="item-price">$24</div>
+            </div>
+          </div>
+
+          <div class="menu-category" id="pizza">
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Margherita</h4>
+                <p>San Marzano tomatoes, fresh mozzarella, and basil</p>
+              </div>
+              <div class="item-price">$18</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Quattro Stagioni</h4>
+                <p>Artichokes, mushrooms, ham, and olives</p>
+              </div>
+              <div class="item-price">$22</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Diavola</h4>
+                <p>Spicy salami, mozzarella, and chili oil</p>
+              </div>
+              <div class="item-price">$20</div>
+            </div>
+          </div>
+
+          <div class="menu-category" id="desserts">
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Tiramisu</h4>
+                <p>Classic Italian dessert with mascarpone and coffee</p>
+              </div>
+              <div class="item-price">$10</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Panna Cotta</h4>
+                <p>Silky vanilla custard with berry compote</p>
+              </div>
+              <div class="item-price">$9</div>
+            </div>
+            <div class="menu-item">
+              <div class="item-info">
+                <h4>Gelato</h4>
+                <p>Artisan gelato - ask for today's flavors</p>
+              </div>
+              <div class="item-price">$7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+              Bella Vista has been serving authentic Italian cuisine for over 20
+              years. Our chef, Marco Rossi, brings traditional recipes from his
+              hometown in Tuscany, using only the finest imported ingredients
+              and local seasonal produce.
+            </p>
+            <p>
+              We believe that great food brings people together, and our warm,
+              welcoming atmosphere makes every meal a celebration.
+            </p>
+            <div class="chef-signature">
+              <div class="signature">Marco Rossi</div>
+              <div class="title">Executive Chef</div>
+            </div>
+          </div>
+          <div class="about-image">
+            <div class="chef-photo"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Visit Us</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <h4>📍 Address</h4>
+              <p>123 Little Italy Street<br />New York, NY 10012</p>
+            </div>
+            <div class="contact-item">
+              <h4>📞 Phone</h4>
+              <p>(555) 123-4567</p>
+            </div>
+            <div class="contact-item">
+              <h4>🕒 Hours</h4>
+              <p>
+                Mon-Thu: 5:00 PM - 10:00 PM<br />
+                Fri-Sat: 5:00 PM - 11:00 PM<br />
+                Sun: 4:00 PM - 9:00 PM
+              </p>
+            </div>
+          </div>
+          <div class="reservation-form">
+            <h3>Make a Reservation</h3>
+            <form>
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email" required />
+              <input type="tel" placeholder="Phone" required />
+              <input type="date" required />
+              <select required>
+                <option value="">Select Time</option>
+                <option value="5:00">5:00 PM</option>
+                <option value="5:30">5:30 PM</option>
+                <option value="6:00">6:00 PM</option>
+                <option value="6:30">6:30 PM</option>
+                <option value="7:00">7:00 PM</option>
+                <option value="7:30">7:30 PM</option>
+                <option value="8:00">8:00 PM</option>
+              </select>
+              <select required>
+                <option value="">Party Size</option>
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5+ people</option>
+              </select>
+              <button type="submit" class="submit-btn">Reserve Table</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Bella Vista</h4>
+            <p>Authentic Italian dining experience in the heart of the city.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+              <a href="#">Facebook</a>
+              <a href="#">Instagram</a>
+              <a href="#">TripAdvisor</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Bella Vista Restaurant. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
