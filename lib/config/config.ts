@@ -2,6 +2,9 @@ import path from "path";
 
 // Anthropic Claude AI
 export const ClaudeConfig = {
+  MAX_INPUT_TOKENS: 7700,
+  INPUT_TEMPRETURE:0.1,
+  MODEL:"claude-opus-4-20250514",
   webspec_system_prompt:
     "Your task is to create a one-page website based on the given specifications, delivered as an HTML file with embedded JavaScript and plain css/tailwind. The website should incorporate a variety of engaging and interactive design features, such as drop-down menus, dynamic text and content, clickable buttons, and more. Ensure that the design is visually appealing, responsive, and user-friendly. The HTML, CSS/tailwindcss(from https://cdn.tailwindcss.com in a <script> tag), and JavaScript code should be well-structured, efficiently organized, and properly commented for readability and maintainability.You have to output the code only no other text of any kind is allowed.\nFor icons use font-awesome icons instead of svg from: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css. When creating a carousel make sure only one image appears at once. if any of the provided variables is empty or null, ignore the whole section it refers to",
   img2web_system_prompt:

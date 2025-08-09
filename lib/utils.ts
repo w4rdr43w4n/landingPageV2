@@ -101,3 +101,8 @@ Instructions:
 ${edits}
 `;
 }
+export function disableLinks(htmlString: string) {
+  return htmlString
+    .replace(/<a\s+[^>]*href="[^"]*"[^>]*>/gi, "<span>")
+    .replace(/<\/a>/gi, "</span>");
+}

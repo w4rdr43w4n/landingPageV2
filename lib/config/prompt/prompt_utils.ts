@@ -19,7 +19,7 @@ export async function loadTemplates() {
     const html = readSafe(path.join(folderPath, "index.html"));
     const css = readSafe(path.join(folderPath, "style.css"));
 
-    result.push({ name: folder, html: disableLinks(html), css });
+    result.push({ name: folder, html: html, css });
   }
   return result;
 }
@@ -34,9 +34,9 @@ export async function generateEdits(
 ): Promise<ClaudeHTMLResp> {
   try {
     const msg = await anthropic_client.messages.create({
-      model: "claude-3-5-sonnet-20240620",
-      max_tokens: 7700,
-      temperature: 0.1,
+      model: ClaudeConfig.MODEL,
+      max_tokens:ClaudeConfig.MAX_INPUT_TOKENS,
+      temperature: ClaudeConfig.INPUT_TEMPRETURE,
       system: ClaudeConfig.prompt2web_system_prompt,
       messages: [
         {
@@ -58,7 +58,8 @@ export async function generateEdits(
           errMsg: "Generation Process Failed",
         };
   } catch (err: any) {
-    throw new Error(err.message);
+    console.log(`Claude Error: ${err.message}`)
+    return {success:false,source_code:"",errMsg:err.message}
   }
 }
 
@@ -67,8 +68,36 @@ function readSafe(filePath: string) {
   return fs.existsSync(filePath) ? fs.readFileSync(filePath, "utf8") : "";
 }
 
-function disableLinks(htmlString: string) {
-  return htmlString
-    .replace(/<a\s+[^>]*href="[^"]*"[^>]*>/gi, "<span>")
-    .replace(/<\/a>/gi, "</span>");
+export async function prompt(
+  prompt: string
+): Promise<ClaudeHTMLResp> {
+  try {
+    const msg = await anthropic_client.messages.create({
+      model: ClaudeConfig.MODEL,
+      max_tokens:7700,
+      temperature: 0.5,
+      system: "You are a professional single page website designer and you need to follow provided instructions literally, giving only the output code in a single html code with inlined css snd js",
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "text",
+              text:prompt,
+            },
+          ],
+        },
+      ],
+    });
+    return msg
+      ? { success: true, source_code: (msg.content[0] as fixedResp).text }
+      : {
+          success: false,
+          source_code: "",
+          errMsg: "Generation Process Failed",
+        };
+  } catch (err: any) {
+    console.log(`Claude Error: ${err.message}`)
+    return {success:false,source_code:"",errMsg:err.message}
+  }
 }

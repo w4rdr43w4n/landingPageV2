@@ -32,7 +32,7 @@ export default function SelectPanel({ setChosen, setStep }: SelectorProps) {
     );
   }
   return (
-    <div className="bg-indigo-500 flex flex-col items-center rounded-lg shadow-black shadow-lg p-3 w-full max-w-80">
+    <div className="bg-indigo-500 flex flex-col items-center rounded-lg shadow-black shadow-lg p-3 w-full">
       <h2 className="text-white font-bold text-2xl">Choose a Template</h2>
       <PrevSlider setStep={setStep} setChosen={setChosen} slides={temp} />
     </div>

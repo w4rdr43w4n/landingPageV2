@@ -26,7 +26,7 @@ export default function PrevSlider({
     setStep(steps.PROMPT);
   };
   return (
-    <div className="flex flex-col w-full max-w-xl mx-auto p-4 gap-2 rounded-md outline outline-1 outline-indigo-700 bg-indigo-600">
+    <div className="flex flex-col w-full mx-auto p-4 gap-2 rounded-md outline outline-1 outline-indigo-700 bg-indigo-600">
       <Prev
         html={assembleDoc(slides[currentIndex].html, slides[currentIndex].css)}
       />

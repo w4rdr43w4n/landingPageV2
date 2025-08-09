@@ -1,11 +1,6 @@
 "use client";
 
-import GenerateField from "@/components/Preview/GenerateField";
-import Preview from "@/components/Preview/Preview";
-import { useState } from "react";
-
 export default function Home() {
-  const [code, setCode] = useState("");
   return (
     <>
       <main className="flex flex-col items-center justify-center p-8 gap-10">
